@@ -1,0 +1,147 @@
+.fileContainer {
+  display: grid;
+  grid-template-columns: 1fr 4fr repeat(4, 1fr);
+  height: 80px;
+  width: 100%;
+  border-bottom: 1px solid black;
+  margin-bottom: 10px;
+  transition: all 0.5s ease;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.01);
+  }
+
+  div {
+    align-self: center;
+    text-align: center;
+  }
+
+  .fileNumber {
+    grid-column-start: 1;
+
+    i {
+      font-size: 40px;
+    }
+  }
+
+  .title {
+    grid-column-start: 2;
+    text-align: left;
+  }
+
+  .date {
+    grid-column-start: 4;
+  }
+
+  .size {
+    grid-column-start: 6;
+  }
+
+  &:hover .date {
+    grid-column-start: 3;
+  }
+
+  &:hover .size {
+    grid-column-start: 4;
+  }
+
+  &:hover .downloadBtn {
+    grid-column-start: 6;
+  }
+
+  &:hover .deleteFile {
+    grid-column-start: 5;
+  }
+
+}
+
+
+%fileActionsBtnsTemplateList {
+  display: none;
+  transition: all 0.5s ease;
+  font-size: 25px;
+  padding: 1px;
+  width: 90%;
+  border: 1px solid black;
+  border-radius: 14px;
+
+  .fileContainer:hover & {
+    display: block;
+  }
+
+  &:hover {
+    background-color: #d7d7d7;
+  }
+}
+
+
+
+
+.fileContainerBlock {
+  display: flex;
+  width: 100px;
+  height: 200px;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 0 10px;
+}
+
+.fileIconBlock {
+  font-size: 70px;
+}
+
+.fileInfoBlock {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 75px;
+}
+
+.fileActions {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.downloadBtn {
+  @extend %fileActionsBtnsTemplateList
+}
+
+.deleteFile {
+  @extend %fileActionsBtnsTemplateList
+}
+
+
+%fileActionsBtnsTemplateBlock {
+  display: none;
+  transition: all 0.5s ease;
+  font-size: 10px;
+  padding: 1px;
+  width: 40%;
+  border: 1px solid black;
+  border-radius: 14px;
+  align-self: center;
+  text-align: center;
+  cursor: pointer;
+
+  .fileContainerBlock:hover & {
+    display: block;
+  }
+
+  &:hover {
+    background-color: #d7d7d7;
+  }
+
+}
+.deleteFileBlock {
+  @extend %fileActionsBtnsTemplateBlock
+}
+
+.downloadBtnBlock {
+  @extend %fileActionsBtnsTemplateBlock
+}
+
+

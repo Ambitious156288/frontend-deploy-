@@ -1,0 +1,84 @@
+.PhotoGallery {
+    text-align: center;
+  }
+  
+  .PhotoGallery-logo {
+    height: 40vmin;
+    pointer-events: none;
+  }
+  
+  @media (prefers-reduced-motion: no-preference) {
+    .PhotoGallery-logo {
+      animation: App-logo-spin infinite 20s linear;
+    }
+  }
+  
+  .PhotoGallery-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+  
+  .PhotoGallery-link {
+    color: #61dafb;
+  }
+  
+  @keyframes PhotoGallery-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+
+  .container {
+    margin: 7px;
+}
+
+ul.images {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 15px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  ul.images > li {
+    position: relative;
+    padding-top: 66%;
+  }
+  
+  ul.images > li img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  
+  @media (max-width: 567px) {
+    ul.images {
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+  }
+
+  button.fullscreen-toggle{
+    display: none;
+  }
+
+  .MuiOutlinedInput-input {
+    padding: 18.5px 20px !important;
+  }
+  
+  
